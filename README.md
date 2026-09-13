@@ -8,7 +8,7 @@ A hands-on roadmap for learning PostgreSQL deeply as a backend engineer, query s
 
 The [LeetCode SQL 50](https://leetcode.com/studyplan/top-sql-50/) study plan.
 
-### Select
+### [Select](sql-skills/01-select/)
 - Know: projection, `WHERE`, `DISTINCT`, `LIMIT/OFFSET`, `ORDER BY`
 - Solve: LeetCode SQL 50 → **Select** section
 
