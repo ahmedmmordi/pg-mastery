@@ -64,6 +64,8 @@ The [LeetCode SQL 50](https://leetcode.com/studyplan/top-sql-50/) study plan.
 
 ## Internals Phases (how it actually works)
 
+Reference: [The Internals of PostgreSQL](https://www.interdb.jp/pg/)
+
 ### Data Types
 - Know: `NUMERIC` for money not `FLOAT`, `BIGINT`/UUID for PKs (UUIDv4 vs UUIDv7 index fragmentation), `TIMESTAMPTZ` always over `TIMESTAMP`, `JSONB` over `JSON`
 - Why it matters: wrong type = silent bugs (money rounding) or slow indexes later
