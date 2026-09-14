@@ -12,7 +12,7 @@ The [LeetCode SQL 50](https://leetcode.com/studyplan/top-sql-50/) study plan.
 - Know: projection, `WHERE`, `DISTINCT`, `LIMIT/OFFSET`, `ORDER BY`
 - Solve: LeetCode SQL 50 → **Select** section
 
-### Basic Joins
+### [Basic Joins](sql-skills/02-basic-joins/)
 - Know: `INNER`, `LEFT/RIGHT`, `FULL OUTER`, self-joins. Draw the Venn diagrams once.
 - Solve: LeetCode SQL 50 → **Basic Joins**
 
