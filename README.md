@@ -16,7 +16,7 @@ The [LeetCode SQL 50](https://leetcode.com/studyplan/top-sql-50/) study plan.
 - Know: `INNER`, `LEFT/RIGHT`, `FULL OUTER`, self-joins. Draw the Venn diagrams once.
 - Solve: LeetCode SQL 50 → **Basic Joins**
 
-### Basic Aggregate Functions
+### [Basic Aggregate Functions](sql-skills/03-basic-aggregate-functions/)
 - Know: `COUNT`, `SUM`, `AVG`, `MIN/MAX`, `GROUP BY`
 - Solve: LeetCode SQL 50 → **Basic Aggregate Functions**
 
