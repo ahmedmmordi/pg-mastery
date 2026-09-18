@@ -209,3 +209,52 @@ This asymmetry is a frequent source of bugs: code that assumes "no data
 means 0" breaks silently on `SUM`/`AVG`/`MIN`/`MAX`, but works fine on
 `COUNT`. Wrap the non-`COUNT` aggregates in `COALESCE(..., 0)` if a numeric
 default is expected downstream.
+
+---
+
+## 12. Aggregate algorithms (physical execution — PostgreSQL)
+
+Two main strategies for computing a `GROUP BY`/aggregate:
+
+### HashAggregate
+Build a hash table keyed by the `GROUP BY` columns; for each incoming row,
+update the running aggregate (`SUM`, `COUNT`, etc.) for that row's group.
+One pass over the data, no sorting required.
+
+- **Best when**: the number of distinct groups is small enough that the
+  hash table fits in `work_mem`. If it doesn't fit, groups spill to disk in
+  batches — the same tradeoff as a hash join.
+- **Indexes**: none needed — rows are processed in whatever order they
+  arrive.
+
+### GroupAggregate
+Requires the input already sorted by the `GROUP BY` columns (via an
+explicit sort step, or an index scan that already returns rows in that
+order). Walks the sorted rows and finalizes each group as soon as the next
+group starts, since all of a group's rows are guaranteed to be adjacent.
+
+- **Best when**: the data is already sorted (e.g. an index exists on the
+  grouping column), or there are too many distinct groups for
+  `HashAggregate`'s hash table to fit in memory.
+- **Indexes**: an index on the `GROUP BY` column(s) can let this skip the
+  sort step entirely.
+
+### Parallel aggregation
+PostgreSQL can split the scan across worker processes, each computing a
+*partial* aggregate over its slice of rows, then combine (finalize) the
+partials into the final result. Shows up in `EXPLAIN` as
+`Partial HashAggregate` / `Finalize HashAggregate` (or the `GroupAggregate`
+equivalents).
+
+```sql
+EXPLAIN (COSTS OFF)
+SELECT department, COUNT(*) FROM Employees GROUP BY department;
+```
+
+### Summary
+
+| | HashAggregate | GroupAggregate |
+|---|---|---|
+| Algorithm | Hash table keyed by group, update per row | Sort by group key, finalize each group as it ends |
+| Helpful indexes | None | Index on the `GROUP BY` column(s) |
+| Good when | Few distinct groups, hash fits in `work_mem` | Data already sorted, or too many groups for a hash table |
