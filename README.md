@@ -20,7 +20,7 @@ The [LeetCode SQL 50](https://leetcode.com/studyplan/top-sql-50/) study plan.
 - Know: `COUNT`, `SUM`, `AVG`, `MIN/MAX`, `GROUP BY`
 - Solve: LeetCode SQL 50 → **Basic Aggregate Functions**
 
-### Sorting and Grouping
+### [Sorting and Grouping](sql-skills/04-sorting-and-grouping/)
 - Know: `GROUP BY` + `HAVING` (filters after aggregation, not `WHERE`), multi-column `ORDER BY`
 - Solve: LeetCode SQL 50 → **Sorting and Grouping**
 
