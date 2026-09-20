@@ -24,7 +24,7 @@ The [LeetCode SQL 50](https://leetcode.com/studyplan/top-sql-50/) study plan.
 - Know: `GROUP BY` + `HAVING` (filters after aggregation, not `WHERE`), multi-column `ORDER BY`
 - Solve: LeetCode SQL 50 → **Sorting and Grouping**
 
-### Advanced Select and Joins
+### [Advanced Select and Joins](sql-skills/05-advanced-select-and-joins)
 - Know: window functions: `ROW_NUMBER`, `RANK`, `DENSE_RANK`, `LAG/LEAD`, `PARTITION BY`. Highest-leverage topic here.
 - Solve: LeetCode SQL 50 → **Advanced Select and Joins**
 
