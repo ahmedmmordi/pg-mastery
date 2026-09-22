@@ -28,7 +28,7 @@ The [LeetCode SQL 50](https://leetcode.com/studyplan/top-sql-50/) study plan.
 - Know: window functions: `ROW_NUMBER`, `RANK`, `DENSE_RANK`, `LAG/LEAD`, `PARTITION BY`. Highest-leverage topic here.
 - Solve: LeetCode SQL 50 → **Advanced Select and Joins**
 
-### Subqueries
+### [Subqueries](sql-skills/06-subqueries/)
 - Know: scalar, correlated, `EXISTS` vs `IN` (know which is faster and why), CTEs (`WITH`), recursive CTEs
 - Solve: LeetCode SQL 50 → **Subqueries**
 
