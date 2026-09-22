@@ -32,7 +32,7 @@ The [LeetCode SQL 50](https://leetcode.com/studyplan/top-sql-50/) study plan.
 - Know: scalar, correlated, `EXISTS` vs `IN` (know which is faster and why), CTEs (`WITH`), recursive CTEs
 - Solve: LeetCode SQL 50 → **Subqueries**
 
-### Advanced String Functions / Regex / Clause
+### [Advanced String Functions / Regex / Clause](sql-skills/07-advanced-string-functions)
 - Know: `LIKE`/`ILIKE`, `~`/`~*` regex, `SIMILAR TO`, `SPLIT_PART`, `CONCAT`, `TRIM`
 - Solve: LeetCode SQL 50 → **Advanced String Functions / Regex / Clause**
 
